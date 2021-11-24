@@ -12,7 +12,7 @@
 
 ## Plateforme de streaming  🎧
 
-### Setup du projet ⚒️
+### Setup du projet ⚒︝
 #### 1. Créer ou récupérer la base du projet
 - Forker : https://github.com/emmanuelgratuze/mmi-react-course-p2021-project-base
 **ou**

@@ -1,20 +1,12 @@
 import React from 'react'
 
-import SecondComponent from './SecondComponent.js'
+import Button from 'components/Button'
 
 const FirstComponent= () => {
   return (
-    <div>
-      First component
-      <SecondComponent
-        color="red"
-      >
-        Second component children
-      </SecondComponent>
-
-      <SecondComponent>
-        Second component children green please
-      </SecondComponent>
+    <div style={{ padding: "80px"}}>
+      <Button>Je mise</Button>
+      <Button>Je passe</Button>
     </div>
   )
 }
