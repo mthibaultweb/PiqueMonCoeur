@@ -8,10 +8,13 @@ const Header = () => {
       Cours React
       <ul className={styles.menu}>
         <li>
-          <Link to="/first-component" className={styles.menuItem}>Premier composant</Link>
+          <Link to="/profil" className={styles.menuItem}>Profil</Link>
         </li>
         <li>
-          <Link to="/styling-components" className={styles.menuItem}>Styliser les composants</Link>
+          <Link to="/feed" className={styles.menuItem}>Feed</Link>
+        </li>
+        <li>
+          <Link to="/jackpot" className={styles.menuItem}>Styliser les composants</Link>
         </li>
         <li>
           <Link to="/hooks" className={styles.menuItem}>Hooks</Link>

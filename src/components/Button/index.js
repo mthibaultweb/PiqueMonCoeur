@@ -2,14 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const Button = ({children, to}) => {
+const Button = ({children,action}) => {
 
     return (
-        <Link to={to}>
-            <button>
-                {children}
-            </button>
-        </Link>
+        <button onClick={action}>
+            {children}
+        </button>
     );
 };
 

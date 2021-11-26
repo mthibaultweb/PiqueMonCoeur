@@ -2,7 +2,7 @@ import React from 'react'
 
 import Button from 'components/Button'
 
-const FirstComponent= () => {
+const Profil= () => {
   return (
     <div style={{ padding: "80px"}}>
       <Button>Je mise</Button>
@@ -11,4 +11,4 @@ const FirstComponent= () => {
   )
 }
 
-export default FirstComponent;
+export default Profil;

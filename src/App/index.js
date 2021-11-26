@@ -1,33 +1,28 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import './App.css';
-
 import Header from "components/Header";
 
-// Exercices
-import FirstComponentExercice from 'exercices/FirstComponent'
-import StylingComponentsExercice from 'exercices/StylingComponents'
-import SpotifyExercice from 'exercices/Spotify'
-import ContextsExercice from 'exercices/Contexts'
+// Pages
+import ProfilPage from 'pages/Profil'
+import JackpotPage from 'pages/Jackpot'
+import Feed from 'pages/Feed'
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <Switch>
-        <Route exact path="/first-component">
-          <FirstComponentExercice />
+        <Route exact path="/profil">
+          <ProfilPage />
         </Route>
-        <Route exact path="/styling-components">
-          <StylingComponentsExercice />
+        <Route exact path="/jackpot">
+          <JackpotPage />
         </Route>
-        <Route exact path="/spotify">
-          <SpotifyExercice />
-        </Route>
-        <Route exact path="/contexts">
-          <ContextsExercice />
+        <Route exact path="/feed">
+          <Feed />
         </Route>
         <Route exact path="/">
-          <FirstComponentExercice />
+          <ProfilPage />
         </Route>
       </Switch>
     </BrowserRouter>
