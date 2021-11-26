@@ -1,14 +1,13 @@
 import React from 'react'
-
+import Form from 'exercices/Form'
 import Button from 'components/Button'
 
 const FirstComponent= () => {
   return (
-    <div style={{ padding: "80px"}}>
-      <Button>Je mise</Button>
-      <Button>Je passe</Button>
+    <div style={{ padding: "30px"}}>
+      <Form/>
     </div>
   )
 }
 
-export default FirstComponent;
+  export default FirstComponent;
