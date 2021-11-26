@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import clsx from 'clsx';
 
 import Button from 'components/Button'
+import Profiles from 'components/Profiles'
 
 const Feed= () => {
 
@@ -47,11 +48,15 @@ const Feed= () => {
     console.log(time)
 
     return (
+
+
+
         <div>
-        <input type="number" value={jetons} readOnly />
-        <Button action={miser}>Miser (1 jetons)</Button>
-        <Button action={allIn}>All-In (5 jetons)</Button>
-        <Button>Passer</Button>
+            <Profiles />
+            <input type="number" value={jetons} readOnly />
+            <Button action={miser}>Miser (1 jetons)</Button>
+            <Button action={allIn}>All-In (5 jetons)</Button>
+            <Button>Passer</Button>
         </div>
     )
 }
