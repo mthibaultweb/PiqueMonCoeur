@@ -2,6 +2,14 @@ import React from 'react';
 import { useState } from "react";
 import styles from "./Form.module.css";
 
+// Import FontAwesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+library.add(fab, faCheckSquare)
+
 const Form = () => {
 
         const [input, setInput] = useState({});
@@ -18,31 +26,34 @@ const Form = () => {
         }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <h1>Mon profil</h1>
-                {/* <h2>Ma photo de profil</h2>
-                <img src="public/profil.jpeg" width="250" height="250" ></img>
-                <div>
-                <input type="file" name="profil" id="profil" accept="png, jpg, jpeg" height="500" width="500" required/><br/>
+        <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.alignement}>
+                <h1 className={styles.titre}>Mon profil</h1>
+
+                <h2 className={styles.titre2}>Mes coordonnées</h2>
+                <div className={styles.inputBlock}>
+                    <label className={styles.titreform} htmlFor="name">Nom </label><br/>
+                    <input type="text" name="lastname" id="lastname" value={input.lastname || ""} onChange={handleChange} required/>
                 </div>
-                <br/>    */}
-                <h2>Mes coordonnées</h2>
-                <label htmlFor="name">Nom </label><br/>
-                <input type="text" name="lastname" id="lastname" value={input.lastname || ""} onChange={handleChange} required/>
-                <br/> 
-                <label htmlFor="name">Prénom </label> <br/>
-                <input type="text" name="firstname" id="firstname" value={input.firstname || ""} onChange={handleChange} required/> 
-                <br/>
-                <label htmlFor="number">Âge </label> <br/>
-                <input type="tel" name="age" id="age" value={input.age || ""} onChange={handleChange} required/><br/>
-                <label htmlFor="name">Numéro de téléphone </label> <br/>
-                <input type="text" name="phone" id="phone" value={input.phone || ""} onChange={handleChange} required/>
-                <br/>
-                <h2>Ma description</h2>
+                <div className={styles.inputBlock}>
+                    <label className={styles.titreform} htmlFor="name">Prénom </label> <br/>
+                    <input type="text" name="firstname" id="firstname" value={input.firstname || ""} onChange={handleChange} required/> 
+                </div>
+                
+                <div className={styles.inputBlock}>
+                    <label className={styles.titreform} htmlFor="number">Âge </label> <br/>
+                    <input type="tel" name="age" id="age" value={input.age || ""} onChange={handleChange} required/><br/>
+                </div>
+
+                <div className={styles.inputBlock}>
+                    <label htmlFor="name">Numéro de téléphone </label> <br/>
+                    <input type="text" name="phone" id="phone" value={input.phone || ""} onChange={handleChange} required/>
+                </div>
+                
+                <h2 className={styles.titre2}>Ma description</h2>
                 <label htmlFor="name">Description </label><br/>
                 <input type="text" name="description" id="description" value={input.description || ""} onChange={handleChange} required/>
-                <h2>Mes réseaux sociaux</h2>
+                <h2 className={styles.titre2}>Mes réseaux sociaux</h2>
                     <label htmlFor="name">Instagram </label> <br/>
                     <input type="url" name="instagram" id="instagram" value={input.instagram || ""} onChange={handleChange} />
                 <br/>
