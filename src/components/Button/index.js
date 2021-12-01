@@ -1,20 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import styles from './Button.module.css'
 
-const Button = ({children,action}) => {
+const Button = ({children,action,className}) => {
 
     return (
-        <button onClick={action}>
+        <button className={className} onClick={action}>
             {children}
         </button>
     );
 };
-
-Button.defaultProps = {
-    
-};
-
-Button.propTypes = {};
 
 export default Button;
