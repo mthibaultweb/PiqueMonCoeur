@@ -1,13 +1,14 @@
 import React from 'react'
 import styles from './Profiles.module.css'
 
+// Import FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
 library.add(fab, faCheckSquare)
+
 
 const users = [
     {
@@ -132,19 +133,19 @@ const DeckCards = () => {
                         <p className="h6 card-text">Réseaux sociaux</p>
                         <ul className="list-inline">
                             {user.insta ?
-                                <li className="list-inline-item"><a className="btn btn-dark" href={"https://www.instagram.com/" + user.insta} ><FontAwesomeIcon icon="fa-brands fa-instagram" /> Instagram</a></li>
+                                <li className="list-inline-item"><a className="btn btn-dark" href={user.insta} ><FontAwesomeIcon icon="fa-brands fa-instagram" /> Instagram</a></li>
                                 : null
                             }
                             {user.twitter ?
-                                <li className="list-inline-item"><a className="btn btn-dark" href={"https://twitter.com/" + user.twitter} ><FontAwesomeIcon icon="fa-brands fa-twitter" /> Twitter</a></li>
+                                <li className="list-inline-item"><a className="btn btn-dark" href={user.twitter} ><FontAwesomeIcon icon="fa-brands fa-twitter" /> Twitter</a></li>
                                 : null
                             }
                             {user.facebook ?
-                                <li className="list-inline-item"><a className="btn btn-dark" href={"https://www.facebook.com/" + user.facebook} ><FontAwesomeIcon icon="fa-brands fa-facebook-f" /> Facebook</a></li>
+                                <li className="list-inline-item"><a className="btn btn-dark" href={user.facebook} ><FontAwesomeIcon icon="fa-brands fa-facebook-f" /> Facebook</a></li>
                                 : null
                             }
                             {user.tikTok ?
-                                <li className="list-inline-item"><a className="btn btn-dark" href={"https://www.tiktok.com/@" + user.tikTok} ><FontAwesomeIcon icon="fa-brands fa-tiktok" /> TikTok</a></li>
+                                <li className="list-inline-item"><a className="btn btn-dark" href={user.tikTok} ><FontAwesomeIcon icon="fa-brands fa-tiktok" /> TikTok</a></li>
                                 : null
                             }
                         </ul> 
