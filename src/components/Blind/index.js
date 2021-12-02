@@ -29,7 +29,7 @@ const Blind= () => {
     
             return () => clearTimeout(timeout)
         }
-    }, [jetons]);
+    }, [jetons, time]);
 
     return (
 
