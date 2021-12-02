@@ -1,15 +1,19 @@
-import React from 'react'
-import Form from 'pages/Form'
+import React, { useContext } from 'react'
+import Form from 'components/Form'
 import Button from 'components/Button'
+import AppContext from 'contexts/AppContext'
+import UserInfos from '../../components/UserInfos'
 
 const Profil= () => {
 
-
+  const {toggleForm} = useContext(AppContext)
 
   return (
-    <div style={{ padding: "30px"}}>
+    <div className="container pt-5 d-flex flex-column align-items-center">
+      <UserInfos/>
+      <Button className="btn btn-dark fit-content" onClick={toggleForm}>Modifier mon profil</Button>
       <Form/>
-      <Button children="Modifier"/>
+      
     </div>
   )
 }

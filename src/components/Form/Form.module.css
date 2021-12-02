@@ -2,7 +2,14 @@
     border-radius: 100px;
     display: flex;
     justify-content: center;
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+}
 
+.hideForm{
+    opacity: 0;
+    height: 1px;
+    overflow: hidden;
 }
 
 .alignement{

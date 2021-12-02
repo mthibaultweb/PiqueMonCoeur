@@ -1,0 +1,72 @@
+const profiles = [
+    {
+        id: 1,
+        firstName: 'Paul',
+        lastName: 'Thomas',
+        age: 36,
+        phone: '0623458972',
+        insta: 'mthibaultweb',
+        twitter: 'ubmontaigne',
+        facebook: 'mmibordeaux',
+        tikTok: 'squeezie',
+        gender: 0,
+        attrWomen : true,
+        attrMen : true,
+        attrNB : false,
+        relType : 0,
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis metus vel ipsum consectetur posuere. Morbi euismod fringilla tincidunt. Quisque viverra fringilla dapibus. In hac habitasse platea dictumst. Morbi egestas est eu dui rhoncus faucibus sit amet at enim. Morbi dapibus pharetra libero, eu porttitor est fringilla ac. Sed massa nisi, euismod sit amet dictum sit amet, molestie vitae nisi. In vitae ipsum metus. Fusce nisl nunc, imperdiet id tincidunt at, volutpat et lectus. Etiam bibendum augue et odio sagittis, vel mattis mi varius. Nunc at metus ac orci vehicula rutrum. Ut at ultricies lorem, et viverra diam.'
+    },
+    {
+        id: 2,
+        firstName: 'Robert',
+        lastName: 'Durand',
+        age: 52,
+        phone: '0623458972',
+        insta: '',
+        twitter: '',
+        facebook: '',
+        tikTok: '',
+        gender: 0,
+        attrWomen : true,
+        attrMen : false,
+        attrNB : false,
+        relType : 1,
+        desc: ''
+    },
+    {
+        id: 3,
+        firstName: 'Ginette',
+        lastName: 'Gomez',
+        age: 47,
+        phone: '',
+        insta: '',
+        twitter: '',
+        facebook: '',
+        tikTok: '',
+        gender: 1,
+        attrWomen : true,
+        attrMen : true,
+        attrNB : true,
+        relType : 2,
+        desc: ''
+    },
+    {
+        id: 4,
+        firstName: 'Chris',
+        lastName: 'Roussel',
+        age: 47,
+        phone: '',
+        insta: '',
+        twitter: '',
+        facebook: '',
+        tikTok: '',
+        gender: 2,
+        attrWomen : true,
+        attrMen : true,
+        attrNB : true,
+        relType : 3,
+        desc: ''
+    }];
+
+    export default profiles
+    
