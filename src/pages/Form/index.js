@@ -18,6 +18,7 @@ const Form = () => {
           const name = event.target.name;
           const value = event.target.value;
           setInput(values => ({...values, [name]: value}))
+debugger
         }
       
         const handleSubmit = (event) => {
@@ -35,6 +36,7 @@ const Form = () => {
                     <label className={styles.titreform} htmlFor="name">Nom </label><br/>
                     <input type="text" name="lastname" id="lastname" value={input.lastname || ""} onChange={handleChange} required/>
                 </div>
+
                 <div className={styles.inputBlock}>
                     <label className={styles.titreform} htmlFor="name">Prénom </label> <br/>
                     <input type="text" name="firstname" id="firstname" value={input.firstname || ""} onChange={handleChange} required/> 
@@ -46,91 +48,124 @@ const Form = () => {
                 </div>
 
                 <div className={styles.inputBlock}>
-                    <label htmlFor="name">Numéro de téléphone </label> <br/>
+                    <label className={styles.titreform} htmlFor="name">Numéro de téléphone </label> <br/>
                     <input type="text" name="phone" id="phone" value={input.phone || ""} onChange={handleChange} required/>
                 </div>
                 
-                <h2 className={styles.titre2}>Ma description</h2>
-                <label htmlFor="name">Description </label><br/>
+                <div className={styles.inline}>
+                </div>
+
+                <h2 className={styles.titre3}>Je me décris briévement</h2>
+
+                <div className={styles.inputBlock}>
+                <label className={styles.titreform} htmlFor="name">Description </label><br/>
                 <input type="text" name="description" id="description" value={input.description || ""} onChange={handleChange} required/>
-                <h2 className={styles.titre2}>Mes réseaux sociaux</h2>
-                    <label htmlFor="name">Instagram </label> <br/>
+                </div>
+
+                <div className={styles.inline}>
+                </div>
+                
+                <div className={styles.inputBlock}>
+                <h2 className={styles.titre3}>Mes réseaux sociaux</h2>
+                    <label className={styles.titreform} htmlFor="name">Instagram </label> <br/>
                     <input type="url" name="instagram" id="instagram" value={input.instagram || ""} onChange={handleChange} />
-                <br/>
-                    <label htmlFor="name">Twitter </label> <br/>
+                </div>
+
+                <div className={styles.inputBlock}>
+                    <label className={styles.titreform} htmlFor="name">Twitter </label> <br/>
                     <input type="url" name="twitter" id="twitter" value={input.twitter || ""} onChange={handleChange}/>
-                <br/>
-                    <label htmlFor="name">Facebook </label> <br/>
+                </div>
+                <div className={styles.inputBlock}>
+                    <label className={styles.titreform} htmlFor="name">Facebook </label> <br/>
                     <input type="url" name="facebook" id="facebook" value={input.facebook || ""} onChange={handleChange} />
-                <br/>
-                    <label htmlFor="name">Tik-Tok </label> <br/>
+               </div>
+               <div className={styles.inputBlock}>
+                    <label className={styles.titreform} htmlFor="name">Tik-Tok </label> <br/>
                     <input type="url" name="tiktok" id="tiktok" value={input.tiktok || ""} onChange={handleChange} />
-                <br/>
-                <h2>Le genre auquel je m'identifie</h2>
-                <div>
+               </div>
+
+               <div className={styles.inline}>
+                </div>
+
+                {/* PARTIE BUTTONS RADIO */}
+
+               <div className={styles.inputBlock}>
+                <h2 className={styles.titre3}>Le genre auquel <br/> je m'identifie</h2>
+                </div>
+
+                <div className={styles.inputBlock}>
+
+                <label className={styles.container}>
                     <input type="radio" id="king" name="gender" value="0" onChange={handleChange} />
-                    <label htmlFor="king">Roi (Homme)</label>
+                    <span className={styles.checkmark} for="king" htmlFor="king">Roi (Homme)
+                    </span>
+                    </label>
                 </div>
-                <br/>
-                <div>
+
+
+                <div className={styles.inputBlock}>
                     <input type="radio" id="queen" name="gender" value="1" onChange={handleChange} />
-                    <label htmlFor="queen">Reine (Femme)</label>
+                    <label className={styles.titre5} for="queen" htmlFor="queen">Reine (Femme)</label>
                 </div>
-                <br/>
-                <div>
+                <div className={styles.inputBlock}>
                     <input type="radio" id="ace" name="gender" value="2" onChange={handleChange} />
-                    <label htmlFor="ace">As (Non-binaire)</label>
+                    <label className={styles.titre5} for="ace" htmlFor="ace">As (Non-binaire)</label>
                 </div>
-                <h2>Le type de personne que je recherche</h2>
+
+                <div className={styles.inline}>
+                </div>
+
+                <h2 className={styles.titre3}>Le type de personne que je recherche</h2>
                 <div>
-                    <h3 className="h5">Roi (Homme)</h3>
+                    <h3 className={styles.titre3}>Roi (Homme)</h3>
                     <input type="radio" id="attrKing" name="attrMen" value={true} onChange={handleChange}/>
-                    <label htmlFor="attrKing">Oui</label>  <br/>
+                    <label className={styles.titre5} for="king" htmlFor="attrKing">Oui</label> <br/>
                     <input type="radio" id="attrKing" name="attrMen" value={false} onChange={handleChange} checked/>
-                    <label htmlFor="attrKing">Non</label>
+                    <label className={styles.titre5} htmlFor="attrKing">Non</label>
                 </div>
-                <br/>
                 <div>
-                <h3 className="h5">Reine (Femme)</h3>
+                <h3 className={styles.titre3}>Reine (Femme)</h3>
                     <input type="radio" id="attrQueen" name="attrWomen" value={true} onChange={handleChange}/>
-                    <label htmlFor="attrQueen">Oui</label>  <br/>
+                    <label className={styles.titre5} htmlFor="attrQueen">Oui</label>  <br/>
                     <input type="radio" id="attrQueen" name="attrWomen" value={false} onChange={handleChange} checked/>
-                    <label htmlFor="attrQueen">Non</label>
+                    <label className={styles.titre5} htmlFor="attrQueen">Non</label>
 
                 </div>
-                <br/>
+
                 <div>
-                <h3 className="h5">As (Non-binaire)</h3>
+                <h3 className={styles.titre3}>As (Non-binaire)</h3>
                     <input type="radio" id="attrAce" name="attrNB" value={true} onChange={handleChange}/>
-                    <label htmlFor="attrAce">Oui</label>  <br/>
+                    <label className={styles.titre5} htmlFor="attrAce">Oui</label>  <br/>
                     <input type="radio" id="attrAce" name="attrNB" value={false} onChange={handleChange} checked/>
-                    <label htmlFor="attrAce">Non</label>
+                    <label className={styles.titre5} htmlFor="attrAce">Non</label>
                 </div>
-                   
-                <br/>
-                <h2>Le type de relation que je recherche</h2>
+
+                <div className={styles.inline}>
+                </div>
+
+                <h2 className={styles.titre3}>Le type <br/> de relation que <br/> je recherche</h2>
                 <div>
                     <input type="radio" id="diamond" name="relationship" value="0" onChange={handleChange}/>
-                    <label htmlFor="diamond">Carreau</label>
-                    <p>Pour pratiquer une activité physique régulière</p>
+                    <label className={styles.titre5} htmlFor="diamond">Carreau</label>
+                    <p className={styles.titre6}>Pour pratiquer une activité physique régulière</p>
                 </div>
-                <br/>
+
                 <div>
                     <input type="radio" id="clover" name="relationship" value="1" onChange={handleChange}/>
-                    <label htmlFor="Clover">Trèfle</label>
-                    <p>On verra où la chance nous mène</p>
+                    <label className={styles.titre5} htmlFor="Clover">Trèfle</label>
+                    <p className={styles.titre6}>On verra où la chance nous mène</p>
                 </div>
-                <br/>
+
                 <div>
                     <input type="radio" id="spade" name="relationship" value="2" onChange={handleChange}/>
-                    <label htmlFor="spade">Pique</label>
-                    <p>Et si on pimentait la soirée ?</p>
+                    <label className={styles.titre5} htmlFor="spade">Pique</label>
+                    <p className={styles.titre6}>Et si on pimentait la soirée ?</p>
                 </div>
-                <br/>
+
                 <div>
                     <input type="radio" id="heart" name="relationship" value="3" onChange={handleChange}/>
-                    <label htmlFor="heart">Coeur</label>
-                    <p>Je veux trouver l’âme-soeur</p>
+                    <label className={styles.titre5} htmlFor="heart">Coeur</label>
+                    <p className={styles.titre6}>Je veux trouver l’âme-soeur</p>
                 </div>
                 <input type ="submit" name="submit" id="submit"/>
             </div>
@@ -140,4 +175,6 @@ const Form = () => {
 
 export default Form
 
-
+// Afficher nom + prénom de Paul 
+// Faire la même chose pour les 3 autres utilisateur sans boucles sans map
+// Faire de même avec un For ou un Map
