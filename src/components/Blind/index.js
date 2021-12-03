@@ -1,35 +1,22 @@
-import React, { useEffect } from 'react'
+import React, { useContext } from 'react'
+import AppContext from 'contexts/AppContext'
 
 import Button from 'components/Button'
 
 const Blind= () => {
 
-    const initJetons = 20;
-    const [jetons, setJetons] = React.useState(initJetons)
+    const {jetons, miser, allIn} = useContext(AppContext)
+    // const [time, setTime] = React.useState(0)
 
-    const miser = () => {
-        jetons >= 1 ?
-        setJetons(parseFloat(jetons)-1)
-        : alert("Vous n'avez plus de jetons");
-    }
-
-    const allIn = () => {
-        jetons >= 5 ?
-        setJetons(parseFloat(jetons)-5)
-        : alert("Vous n'avez plus assez de jetons");
-    }
-
-    const [time, setTime] = React.useState(0)
-
-    useEffect(() => {
-        if(jetons < 20) {
-            const timeout = setTimeout(() => {
-                setTime(time + 1)
-            },1000)
+    // useEffect(() => {
+    //     if(jetons < 20) {
+    //         const timeout = setTimeout(() => {
+    //             setTime(time + 1)
+    //         },1000)
     
-            return () => clearTimeout(timeout)
-        }
-    }, [jetons, time]);
+    //         return () => clearTimeout(timeout)
+    //     }
+    // }, [jetons, time]);
 
     return (
 

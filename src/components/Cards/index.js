@@ -11,9 +11,9 @@ import Card from '../Card'
 
 library.add(fab, faCheckSquare)
 
-const DeckCards = ({ profiles = [] }) => {
+const Cards = ({ profiles = [] }) => {
     if (!profiles.length) {
-        return "Pas de cartes à afficher"
+        return "Pas de cartes Ã  afficher"
     }
     return (
         <div className="container-fluid my-5">
@@ -25,4 +25,4 @@ const DeckCards = ({ profiles = [] }) => {
     )
 }
 
-export default DeckCards;
+export default Cards;

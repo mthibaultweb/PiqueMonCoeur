@@ -14,17 +14,29 @@ library.add(fab, faCheckSquare)
 
 const Form = ({className}) => {
 
-    const {showForm, changeUserInfos, userInfos} = useContext(AppContext)
+    const {showForm, userInfos, changeUserInfos} = useContext(AppContext)
     // const {userProfile, setUserProfile} = useState('');
 
     const [input, setInput] = useState({});
     
+    const loadForm = () => {
+        if(showForm) {
+
+            // Object.keys(userInfos).forEach(key => {
+            //     const name = key.name;
+            //     const value = key.value;
+            //     setInput(values => ({...values, [name]: value}))
+            // });
+            
+        }
+    }
+
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
         setInput(values => ({...values, [name]: value}))
     }
-    
+ 
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -32,50 +44,50 @@ const Form = ({className}) => {
 
         const newUserInfos = {
             id: 0,
-            firstName: formData.get('firstname'),
-            lastName: formData.get('lastname'),
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
             age: formData.get('age'),
             phone: formData.get('phone'),
-            insta: formData.get('instagram'),
+            insta: formData.get('insta'),
             twitter: formData.get('twitter'),
             facebook: formData.get('facebook'),
-            tikTok: formData.get('tiktok'),
+            tikTok: formData.get('tikTok'),
             gender: formData.get('gender'),
             attrWomen : formData.get('attrWomen'),
             attrMen : formData.get('attrMen'),
             attrNB : formData.get('attrNB'),
-            relType : formData.get('relationship'),
-            desc: formData.get('description')
+            relType : formData.get('relType'),
+            desc: formData.get('desc')
         }
 
         changeUserInfos(newUserInfos)
-
     }
-    return (
 
+    return (
         <form className={clsx(styles.form, {[styles.hideForm] : !showForm})} onSubmit={handleSubmit}>
+            {loadForm()}
             <div className={styles.alignement}>
                 <h1 className={styles.titre}>Mon profil</h1>
 
                 <h2 className={styles.titre2}>Mes coordonnées</h2>
                 <div className={styles.inputBlock}>
-                    <label className={styles.titreform} htmlFor="lastname">Nom </label><br/>
-                    <input type="text" name="lastname" id="lastname" value={userInfos.lastName} onChange={handleChange} required/>
+                    <label className={styles.titreform} htmlFor="lastName">Nom </label><br/>
+                    <input type="text" name="lastName" id="lastName" value={input.lastName} onChange={handleChange}/>
                 </div>
 
                 <div className={styles.inputBlock}>
-                    <label className={styles.titreform} htmlFor="firstname">Prénom </label> <br/>
-                    <input type="text" name="firstname" id="firstname" value={userInfos.firstName} onChange={handleChange} required/> 
+                    <label className={styles.titreform} htmlFor="firstName">Prénom </label> <br/>
+                    <input type="text" name="firstName" id="firstName" value={input.firstName} onChange={handleChange}/> 
                 </div>
                 
                 <div className={styles.inputBlock}>
                     <label className={styles.titreform} htmlFor="age">Âge </label> <br/>
-                    <input type="number" name="age" id="age" value={userInfos.age} onChange={handleChange} required/><br/>
+                    <input type="number" name="age" id="age" value={input.age} onChange={handleChange}/><br/>
                 </div>
 
                 <div className={styles.inputBlock}>
                     <label className={styles.titreform} htmlFor="phone">Numéro de téléphone </label> <br/>
-                    <input type="phone" name="phone" id="phone" value={userInfos.phone} onChange={handleChange} required/>
+                    <input type="phone" name="phone" id="phone" value={input.phone} onChange={handleChange}/>
                 </div>
                 
                 <div className={styles.inline}>
@@ -84,8 +96,8 @@ const Form = ({className}) => {
                 <h2 className={styles.titre3}>Je me décris briévement</h2>
 
                 <div className={styles.inputBlock}>
-                <label className={styles.titreform} htmlFor="name">Description </label><br/>
-                <input type="textarea" name="description" id="description" value={userInfos.desc} onChange={handleChange} required/>
+                <label className={styles.titreform} htmlFor="desc">Description </label><br/>
+                <textarea type="text" name="desc" id="desc" value={input.desc} onChange={handleChange}/>
                 </div>
 
                 <div className={styles.inline}>
@@ -93,47 +105,41 @@ const Form = ({className}) => {
                 
                 <div className={styles.inputBlock}>
                 <h2 className={styles.titre3}>Mes réseaux sociaux</h2>
-                    <label className={styles.titreform} htmlFor="instagram">Instagram </label> <br/>
-                    <input type="url" name="instagram" id="instagram" value={userInfos.insta} onChange={handleChange} />
+                    <label className={styles.titreform} htmlFor="insta">Instagram </label> <br/>
+                    <input type="url" name="insta" id="insta" value={input.insta} onChange={handleChange} />
                 </div>
 
                 <div className={styles.inputBlock}>
                     <label className={styles.titreform} htmlFor="twitter">Twitter </label> <br/>
-                    <input type="url" name="twitter" id="twitter" value={userInfos.twitter} onChange={handleChange} />
+                    <input type="url" name="twitter" id="twitter" value={input.twitter} onChange={handleChange} />
                 </div>
                 <div className={styles.inputBlock}>
                     <label className={styles.titreform} htmlFor="facebook">Facebook </label> <br/>
-                    <input type="url" name="facebook" id="facebook" value={userInfos.facebook} onChange={handleChange} />
+                    <input type="url" name="facebook" id="facebook" value={input.facebook} onChange={handleChange} />
                </div>
                <div className={styles.inputBlock}>
-                    <label className={styles.titreform} htmlFor="tiktok">Tik-Tok </label> <br/>
-                    <input type="url" name="tiktok" id="tiktok" value={userInfos.tikTok} onChange={handleChange} />
+                    <label className={styles.titreform} htmlFor="tikTok">Tik-Tok </label> <br/>
+                    <input type="url" name="tikTok" id="tikTok" value={input.tikTok} onChange={handleChange} />
                </div>
 
                <div className={styles.inline}>
                 </div>
-
-                {/* PARTIE BUTTONS RADIO */}
 
                <div className={styles.inputBlock}>
                 <h2 className={styles.titre3}>Le genre auquel <br/> je m'identifie</h2>
                 </div>
 
                 <div className={styles.inputBlock}>
-
-                <label className={styles.container}>
-                    <input type="radio" id="king" name="gender" value="0" onChange={handleChange} />
-                    <span className={styles.checkmark} htmlFor="king">Roi (Homme)
-                    </span>
-                    </label>
+                    <input type="radio" id="king" name="gender" value="0" onChange={handleChange} checked={input.gender === "0"} />
+                    <label className={styles.titre5} htmlFor="king">Roi (Homme)</label>
                 </div>
 
                 <div className={styles.inputBlock}>
-                    <input type="radio" id="queen" name="gender" value="1" onChange={handleChange} />
+                    <input type="radio" id="queen" name="gender" value="1" onChange={handleChange} checked={input.gender === "1"} />
                     <label className={styles.titre5} htmlFor="queen">Reine (Femme)</label>
                 </div>
                 <div className={styles.inputBlock}>
-                    <input type="radio" id="ace" name="gender" value="2" onChange={handleChange} />
+                    <input type="radio" id="ace" name="gender" value="2" onChange={handleChange} checked={input.gender === "2"} />
                     <label className={styles.titre5} htmlFor="ace">As (Non-binaire)</label>
                 </div>
 
@@ -143,49 +149,49 @@ const Form = ({className}) => {
                 <h2 className={styles.titre3}>Le type de personne que je recherche</h2>
                 <div>
                     <h3 className="h5">Roi (Homme)</h3>
-                    <input type="radio" id="attrKing" name="attrMen" value={true}/>
-                    <label htmlFor="attrKing">Oui</label>  <br/>
-                    <input type="radio" id="attrKing" name="attrMen" value={false}/>
-                    <label htmlFor="attrKing">Non</label>
+                    <input type="radio" id="attrMen" name="attrMen" value="1" onChange={handleChange} checked={input.attrMen === "1"} />
+                    <label htmlFor="attrMen">Oui</label>  <br/>
+                    <input type="radio" id="attrMen" name="attrMen" value="0" onChange={handleChange} checked={input.attrMen === "0"} />
+                    <label htmlFor="attrMen">Non</label>
                 </div>
                 <div>
                     <h3 className="h5">Reine (Femme)</h3>
-                    <input type="radio" id="attrQueen" name="attrWomen" value={true}/>
-                    <label htmlFor="attrQueen">Oui</label>  <br/>
-                    <input type="radio" id="attrQueen" name="attrWomen" value={false} />
-                    <label htmlFor="attrQueen">Non</label>
+                    <input type="radio" id="attrWomen" name="attrWomen" value="1" onChange={handleChange} checked={input.attrWomen === "1"} />
+                    <label htmlFor="attrWomen">Oui</label>  <br/>
+                    <input type="radio" id="attrWomen" name="attrWomen" value="0" onChange={handleChange} checked={input.attrWomen === "0"} />
+                    <label htmlFor="attrWomen">Non</label>
 
                 </div>
 
                 <div>
                     <h3 className="h5">As (Non-binaire)</h3>
-                    <input type="radio" id="attrAce" name="attrNB" value={true}/>
-                    <label htmlFor="attrAce">Oui</label>  <br/>
-                    <input type="radio" id="attrAce" name="attrNB" value={false}/>
-                    <label htmlFor="attrAce">Non</label>
+                    <input type="radio" id="attrNB" name="attrNB" value="1" onChange={handleChange} checked={input.attrNB === "1"} />
+                    <label htmlFor="attrNB">Oui</label>  <br/>
+                    <input type="radio" id="attrNB" name="attrNB" value="0" onChange={handleChange} checked={input.attrNB === "0"} />
+                    <label htmlFor="attrNB">Non</label>
                 </div>
 
                 <h2 className={styles.titre3}>Le type <br/> de relation que <br/> je recherche</h2>
                 <div>
-                    <input type="radio" id="diamond" name="relationship" value="0" />
+                    <input type="radio" id="diamond" name="relType" value="0" onChange={handleChange} checked={input.relType === "0"} />
                     <label htmlFor="diamond">Carreau</label>
                     <p>Pour pratiquer une activité physique régulière</p>
                 </div>
 
                 <div>
-                    <input type="radio" id="clover" name="relationship" value="1" />
-                    <label htmlFor="Clover">Trèfle</label>
+                    <input type="radio" id="clover" name="relType" value="1" onChange={handleChange} checked={input.relType === "1"} />
+                    <label htmlFor="clover">Trèfle</label>
                     <p>On verra où la chance nous mène</p>
                 </div>
 
                 <div>
-                    <input type="radio" id="spade" name="relationship" value="2" />
+                    <input type="radio" id="spade" name="relType" value="2" onChange={handleChange} checked={input.relType === "2"} />
                     <label htmlFor="spade">Pique</label>
                     <p>Et si on pimentait la soirée ?</p>
                 </div>
 
                 <div>
-                    <input type="radio" id="heart" name="relationship" value="3" />
+                    <input type="radio" id="heart" name="relType" value="3" onChange={handleChange} checked={input.relType === "3"} />
                     <label htmlFor="heart">Coeur</label>
                     <p>Je veux trouver l’âme-soeur</p>
                 </div>

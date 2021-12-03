@@ -15,7 +15,7 @@ library.add(fab, faCheckSquare)
 const UserInfos = ({className}) => {
 
     const {userInfos} = useContext(AppContext)
-    console.log({userInfos})
+
     return (
     
         <div key={userInfos.id}>
@@ -54,9 +54,9 @@ const UserInfos = ({className}) => {
 
             <h2>Je recherche :</h2>
             <ul>
-                {userInfos.attrWomen === true ? <li>Femme</li> : null}
-                {userInfos.attrMen === true ? <li>Homme</li> : null }
-                {userInfos.attrNB === true ? <li>Non binaire</li> : null }
+                {userInfos.attrWomen === "1" ? <li>Femme</li> : null}
+                {userInfos.attrMen === "1" ? <li>Homme</li> : null }
+                {userInfos.attrNB === "1" ? <li>Non binaire</li> : null }
             </ul>
             <p>
                 {userInfos.relType === "0" ? "Pour pratiquer une activité physique régulière" : null}

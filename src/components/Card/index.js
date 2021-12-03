@@ -6,19 +6,19 @@ const Card = ({ profile }) => {
     return (
         <div key={profile.id} className="card mb-5">
             <div className="card-header">
-                {profile.gender === 0 ?
+                {profile.gender === "0" ?
                     <div className={styles.profileImage}>
                         <img src="assets/king.png" alt="king"/>
                     </div>
                     : null
                 }
-                {profile.gender === 1 ?
+                {profile.gender === "1" ?
                     <div className={styles.profileImage}>
                         <img src="assets/queen.png" alt="queen"/>
                     </div>
                     : null
                 }
-                {profile.gender === 2 ?
+                {profile.gender === "2" ?
                     <div className={styles.profileImage}>
                         <img src="assets/ace.png" alt="ace"/>
                     </div>
@@ -27,19 +27,19 @@ const Card = ({ profile }) => {
                 <p className="h5 card-title">{profile.firstName} {profile.lastName}, {profile.age} ans</p>  
                     
                 <p className="h6 card-subtitle mb-2 text-muted">
-                    {profile.relType === 0 ? "? Pour pratiquer une activité physique régulière" : null}
-                    {profile.relType === 1 ? "? On verra où la chance nous mène" : null}
-                    {profile.relType === 2 ? "? Et si on pimentait la soirée ?" : null}
-                    {profile.relType === 3 ? "? Je veux trouver l’âme-soeur" : null}
+                    {profile.relType === "0" ? "? Pour pratiquer une activité physique régulière" : null}
+                    {profile.relType === "1" ? "? On verra où la chance nous mène" : null}
+                    {profile.relType === "2" ? "? Et si on pimentait la soirée ?" : null}
+                    {profile.relType === "3" ? "? Je veux trouver l’âme-soeur" : null}
                 </p>
             </div>
 
             <div className="card-body">
                 <p className="h6 card-text">Je suis attiré·e par</p>
                 <ul className="">
-                    {profile.attrWomen === true ? <li>Femme</li> : null}
-                    {profile.attrMen === true ? <li>Homme</li> : null }
-                    {profile.attrNB === true ? <li>Non binaire</li> : null }
+                    {profile.attrWomen === "1" ? <li>Femme</li> : null}
+                    {profile.attrMen === "1" ? <li>Homme</li> : null }
+                    {profile.attrNB === "1" ? <li>Non binaire</li> : null }
                 </ul>
                 <hr/>
                 
