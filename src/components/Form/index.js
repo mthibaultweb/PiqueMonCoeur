@@ -14,7 +14,7 @@ library.add(fab, faCheckSquare)
 
 const Form = ({className}) => {
 
-    const {showForm, userInfos, changeUserInfos} = useContext(AppContext)
+    const {showForm, changeUserInfos} = useContext(AppContext)
     // const {userProfile, setUserProfile} = useState('');
 
     const [input, setInput] = useState({});
