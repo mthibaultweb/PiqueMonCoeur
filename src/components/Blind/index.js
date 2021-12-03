@@ -6,17 +6,6 @@ import Button from 'components/Button'
 const Blind= () => {
 
     const {jetons, miser, allIn} = useContext(AppContext)
-    // const [time, setTime] = React.useState(0)
-
-    // useEffect(() => {
-    //     if(jetons < 20) {
-    //         const timeout = setTimeout(() => {
-    //             setTime(time + 1)
-    //         },1000)
-    
-    //         return () => clearTimeout(timeout)
-    //     }
-    // }, [jetons, time]);
 
     return (
 
